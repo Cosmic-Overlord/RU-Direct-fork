@@ -104,7 +104,7 @@
 	update_text()
 
 /atom/movable/screen/text/lobby/clickable/manifest
-	maptext = "<span class='maptext' style=font-size:8px>ПОКАЗАТЬ МАНИФЕСТ</span>"
+	maptext = "<span class='maptext' style=font-size:8px>МАНИФЕСТ МОРПЕХОВ</span>"
 	icon_state = "manifest"
 
 /atom/movable/screen/text/lobby/clickable/manifest/Click()
@@ -113,7 +113,7 @@
 	player.view_manifest()
 
 /atom/movable/screen/text/lobby/clickable/xenomanifest
-	maptext = "<span class='maptext' style=font-size:8px>ПОКАЗАТЬ ЛИДЕРОВ УЛЬЯ</span>"
+	maptext = "<span class='maptext' style=font-size:8px>МАНИФЕСТ УЛЬЯ</span>"
 	icon_state = "manifest"
 
 /atom/movable/screen/text/lobby/clickable/xenomanifest/Click()
