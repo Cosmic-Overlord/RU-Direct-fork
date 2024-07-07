@@ -46,6 +46,8 @@
 #define COLOR_VIVID_RED "#FF3232"
 #define COLOR_LIGHT_GRAYISH_RED "#E4C7C5"
 
+#define COLOR_RUTGMC_RED "#B43535"
+
 /// Warm but extremely diluted red. rgb(250, 130, 130)
 #define COLOR_SOFT_RED "#FA8282"
 #define COLOR_LASER_RED "#FF8D8D"
