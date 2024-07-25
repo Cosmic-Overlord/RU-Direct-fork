@@ -42,11 +42,9 @@
 	desc = "An assortment of medical supplies"
 	detailed_desc = "Activatable by squad leaders. An assortment of basic medical supplies and some stimulants."
 	ui_icon = "medkit"
-	uses = 1
-	cost = 3
+	uses = 3
+	cost = 1
 	equipment_to_spawn = list(
-		/obj/item/storage/pouch/firstaid/basic,
-		/obj/item/storage/pouch/firstaid/basic,
 		/obj/item/storage/pouch/firstaid/basic,
 		/obj/item/storage/pouch/firstaid/basic,
 		/obj/item/storage/pouch/firstaid/basic,
@@ -62,8 +60,6 @@
 /datum/campaign_asset/equipment/medkit_basic/som
 	asset_portrait = /atom/movable/screen/text/screen_text/picture/potrait/som_req
 	equipment_to_spawn = list(
-		/obj/item/storage/pouch/firstaid/som/full,
-		/obj/item/storage/pouch/firstaid/som/full,
 		/obj/item/storage/pouch/firstaid/som/full,
 		/obj/item/storage/pouch/firstaid/som/full,
 		/obj/item/storage/pouch/firstaid/som/full,

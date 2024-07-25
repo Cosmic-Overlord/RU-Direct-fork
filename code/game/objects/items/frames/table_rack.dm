@@ -20,8 +20,6 @@
 	attack_verb = list("slammed", "bashed", "battered", "bludgeoned", "thrashed", "whacked")
 	var/table_type = /obj/structure/table //what type of table it creates when assembled
 	var/deconstruct_type = /obj/item/stack/sheet/metal
-	/// How much of `deconstruct_type` will be spawned on wrench?
-	var/deconstruct_amount = 1
 
 /obj/item/frame/table/attackby(obj/item/I, mob/user, params)
 	. = ..()
@@ -30,7 +28,7 @@
 
 	var/turf/table_turf = get_turf(src)
 	if(iswrench(I) && deconstruct_type)
-		new deconstruct_type(table_turf, deconstruct_amount)
+		new deconstruct_type(table_turf)
 		qdel(src)
 
 	else if(istype(I, /obj/item/stack/rods))
@@ -93,7 +91,6 @@
 	icon = 'icons/obj/items/items.dmi'
 	icon_state = "reinf_tableparts"
 	table_type = /obj/structure/table/reinforced
-	deconstruct_amount = 2
 
 /*
 * Wooden Table Parts

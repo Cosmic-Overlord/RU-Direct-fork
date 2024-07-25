@@ -17,14 +17,9 @@
 
 /obj/effect/landmark/patrol_point/Initialize(mapload)
 	. = ..()
+	//adds the exit points to the glob, and the start points link to them in lateinit
 	GLOB.patrol_point_list += src
-	RegisterSignal(SSdcs, COMSIG_GLOB_GAMEMODE_LOADED, PROC_REF(finish_setup))
-
-///Finishes setup after we know what gamemode it is
-/obj/effect/landmark/patrol_point/proc/finish_setup(datum/source, mode_override = FALSE)
-	SIGNAL_HANDLER
-	UnregisterSignal(SSdcs, COMSIG_GLOB_GAMEMODE_LOADED)
-	if(!(SSticker?.mode?.round_type_flags & MODE_TWO_HUMAN_FACTIONS) && !mode_override)
+	if(!(SSticker?.mode?.round_type_flags & MODE_TWO_HUMAN_FACTIONS))
 		return
 	SSminimaps.add_marker(src, GLOB.faction_to_minimap_flag[faction], image('icons/UI_icons/map_blips_large.dmi', null, minimap_icon))
 
@@ -38,6 +33,7 @@
 				continue
 			deploy_turfs -= turf
 			break
+
 
 /obj/effect/landmark/patrol_point/Destroy()
 	GLOB.patrol_point_list -= src
@@ -102,7 +98,6 @@
 /obj/effect/landmark/patrol_point/tgmc_11
 	name = "TGMC exit point 1"
 	id = "TGMC_1"
-	icon_state = "blue_1"
 
 /obj/effect/landmark/patrol_point/tgmc_21
 	name = "TGMC exit point 2"

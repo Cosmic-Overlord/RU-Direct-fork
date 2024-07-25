@@ -45,17 +45,10 @@ const CasteView = (props) => {
 export const HiveEvolveScreen = (props) => {
   const { act, data } = useBackend();
 
-  const {
-    name,
-    evolution,
-    abilities,
-    evolves_to,
-    can_evolve,
-    bypass_evolution_checks,
-  } = data as ByondData;
+  const { name, evolution, abilities, evolves_to, can_evolve } =
+    data as ByondData;
 
   const canEvolve = can_evolve && evolution.current >= evolution.max;
-  const bypassEvolution = can_evolve && bypass_evolution_checks;
   // Most checks are skipped for shrike and queen so we except them below.
   const evolvesInto = Object.values(evolves_to);
 
@@ -73,9 +66,7 @@ export const HiveEvolveScreen = (props) => {
               title={`${evolve.name} (click for details)`}
               buttons={
                 <Button
-                  disabled={
-                    !canEvolve && !evolve.instant_evolve && !bypassEvolution
-                  }
+                  disabled={!canEvolve && !evolve.instant_evolve}
                   onClick={() => act('evolve', { path: evolve.type_path })}
                 >
                   Evolve
@@ -104,7 +95,6 @@ type ByondData = {
   abilities: XenoAbility[];
   evolves_to: EvolveCaste[];
   can_evolve: boolean;
-  bypass_evolution_checks: boolean;
 };
 
 type EvolveCaste = {

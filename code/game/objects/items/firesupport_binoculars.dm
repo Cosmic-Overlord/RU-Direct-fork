@@ -85,9 +85,9 @@
 /obj/item/binoculars/fire_support/update_overlays()
 	. = ..()
 	if(mode)
-		. += "binoculars_cas"
+		. += "binoculars_range"
 	else
-		. += "binoculars_orbital"
+		. += "binoculars_laser"
 
 ///Selects a firemode
 /obj/item/binoculars/fire_support/proc/select_radial(mob/user)

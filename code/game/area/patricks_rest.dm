@@ -2,7 +2,6 @@
 /area/patricks_rest
 	name = "Patricks Rest"
 	icon_state = "dark"
-	area_flags = ALWAYS_RADIO
 
 /area/patricks_rest/ground
 	name = "Ground"

@@ -522,8 +522,9 @@ GLOBAL_LIST_EMPTY(possible_items)
 /datum/objective/kill_zombies/check_completion()
 	for(var/mob/living/carbon/human/affectedmob in GLOB.mob_list)
 		if(iszombie(affectedmob))
-			if(affectedmob.get_organ_slot(ORGAN_SLOT_HEART))
-				return FALSE
+			for(var/datum/internal_organ/affectedorgan in affectedmob.internal_organs)
+				if(affectedorgan == affectedmob.internal_organs_by_name["heart"]) //zombies with hearts aren't truly dead
+					return FALSE
 	return TRUE
 
 /datum/objective/seize_area
@@ -555,8 +556,9 @@ GLOBAL_LIST_EMPTY(possible_items)
 			return TRUE
 		for(targethuman in defendedarea)
 			if(iszombie(targethuman)) //zombies count as hostile forces to everyone but zombies
-				if(targethuman.get_organ_slot(ORGAN_SLOT_HEART))
-					return FALSE
+				for(var/datum/internal_organ/affectedorgan in targethuman.internal_organs)
+					if(affectedorgan == targethuman.internal_organs_by_name["heart"])
+						return FALSE
 			if(targethuman.stat == DEAD) //we don't care about dead humans
 				continue
 			if(isxeno(owner.current))

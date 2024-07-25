@@ -371,13 +371,12 @@
 	prescription = TRUE
 
 /obj/item/clothing/glasses/sunglasses/fake/big
-	name = "big sunglasses"
 	desc = "A pair of larger than average designer sunglasses. Doesn't seem like it'll block flashes."
 	icon_state = "bigsunglasses"
 	worn_icon_state = "bigsunglasses"
 
 /obj/item/clothing/glasses/sunglasses/fake/big/prescription
-	name = "big prescription sunglasses"
+	name = "prescription sunglasses"
 	prescription = TRUE
 
 /obj/item/clothing/glasses/sunglasses/sechud

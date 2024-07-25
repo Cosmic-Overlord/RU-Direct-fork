@@ -36,7 +36,7 @@
 /datum/squad/alpha
 	name = "Alpha"
 	id = ALPHA_SQUAD
-	color = COLOR_SQUAD_ALPHA
+	color = "#e61919" // rgb(230,25,25)
 	access = list(ACCESS_MARINE_ALPHA)
 	radio_freq = FREQ_ALPHA
 
@@ -44,7 +44,7 @@
 /datum/squad/bravo
 	name = "Bravo"
 	id = BRAVO_SQUAD
-	color = COLOR_SQUAD_BRAVO
+	color = "#ffc32d" // rgb(255,195,45)
 	access = list(ACCESS_MARINE_BRAVO)
 	radio_freq = FREQ_BRAVO
 
@@ -52,14 +52,14 @@
 /datum/squad/charlie
 	name = "Charlie"
 	id = CHARLIE_SQUAD
-	color = COLOR_SQUAD_CHARLIE
+	color = "#c864c8" // rgb(200,100,200)
 	access = list(ACCESS_MARINE_CHARLIE)
 	radio_freq = FREQ_CHARLIE
 
 /datum/squad/delta
 	name = "Delta"
 	id = DELTA_SQUAD
-	color = COLOR_SQUAD_DELTA
+	color = "#4148c8" // rgb(65,72,200)
 	access = list(ACCESS_MARINE_DELTA)
 	radio_freq = FREQ_DELTA
 
@@ -67,7 +67,7 @@
 /datum/squad/zulu
 	name = "Zulu"
 	id = ZULU_SQUAD
-	color = COLOR_SQUAD_ZULU
+	color = "#FF6A00"
 	access = list(ACCESS_MARINE_ALPHA) //No unique SOM access yet
 	radio_freq = FREQ_ZULU
 	faction = FACTION_SOM
@@ -86,7 +86,7 @@
 /datum/squad/yankee
 	name = "Yankee"
 	id = YANKEE_SQUAD
-	color = COLOR_SQUAD_YANKEE
+	color = "#009999"
 	access = list(ACCESS_MARINE_BRAVO)
 	radio_freq = FREQ_YANKEE
 	faction = FACTION_SOM
@@ -105,7 +105,7 @@
 /datum/squad/xray
 	name = "Xray"
 	id = XRAY_SQUAD
-	color = COLOR_SQUAD_XRAY
+	color = "#008000"
 	access = list(ACCESS_MARINE_CHARLIE)
 	radio_freq = FREQ_XRAY
 	faction = FACTION_SOM
@@ -124,7 +124,7 @@
 /datum/squad/whiskey
 	name = "Whiskey"
 	id = WHISKEY_SQUAD
-	color = COLOR_SQUAD_WHISKEY
+	color = "#CC00CC"
 	access = list(ACCESS_MARINE_DELTA)
 	radio_freq = FREQ_WHISKEY
 	faction = FACTION_SOM

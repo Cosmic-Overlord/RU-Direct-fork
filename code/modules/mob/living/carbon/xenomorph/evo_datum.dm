@@ -57,26 +57,14 @@
 
 /// Some data to update the UI with the current evolution status
 /datum/evolution_panel/ui_data(mob/living/carbon/xenomorph/xeno)
-	var/list/data = list()
+	. = list()
 
-	if(iscrashgamemode(SSticker.mode))
-		var/datum/game_mode/infestation/crash/crash_mode = SSticker.mode
-		data["bypass_evolution_checks"] = !crash_mode.shuttle_landed
-	else
-		data["bypass_evolution_checks"] = (SSticker.mode?.round_type_flags & MODE_ALLOW_XENO_QUICKBUILD) && SSresinshaping.active
+	.["can_evolve"] = !xeno.is_ventcrawling && !xeno.incapacitated(TRUE) && xeno.health >= xeno.maxHealth && xeno.plasma_stored >= (xeno.xeno_caste.plasma_max * xeno.xeno_caste.plasma_regen_limit)
 
-	data["can_evolve"] = \
-		!xeno.is_ventcrawling && \
-		!xeno.incapacitated(TRUE) && \
-		xeno.health >= xeno.maxHealth && \
-		xeno.plasma_stored >= (xeno.xeno_caste.plasma_max * xeno.xeno_caste.plasma_regen_limit)
-
-	data["evolution"] = list(
+	.["evolution"] = list(
 		"current" = xeno.evolution_stored,
 		"max" = xeno.xeno_caste.evolution_threshold
 	)
-
-	return data
 
 /// Handles actuually evolving
 /datum/evolution_panel/ui_act(action, list/params)

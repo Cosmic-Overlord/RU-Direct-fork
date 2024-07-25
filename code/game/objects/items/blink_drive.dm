@@ -31,7 +31,7 @@
 	. = ..()
 	blink_action = new(src)
 
-/obj/item/blink_drive/update_icon(updates=ALL)
+/obj/item/blink_drive/update_icon()
 	. = ..()
 	equipped_user?.update_inv_back()
 	if(charges)
@@ -71,14 +71,6 @@
 
 /obj/item/blink_drive/ui_action_click(mob/user, datum/action/item_action/action, target)
 	return teleport(target, user)
-
-/obj/item/blink_drive/emp_act(severity)
-	. = ..()
-	playsound(src, 'sound/magic/lightningshock.ogg', 50, FALSE)
-	charges = 0
-	deltimer(charge_timer)
-	charge_timer = addtimer(CALLBACK(src, PROC_REF(recharge)), BLINK_DRIVE_CHARGE_TIME * (6 - severity), TIMER_STOPPABLE)
-	update_appearance(UPDATE_ICON)
 
 ///Handles the actual teleportation
 /obj/item/blink_drive/proc/teleport(atom/A, mob/user)
@@ -136,7 +128,7 @@
 	charges --
 	deltimer(charge_timer)
 	charge_timer = addtimer(CALLBACK(src, PROC_REF(recharge)), BLINK_DRIVE_CHARGE_TIME * 2, TIMER_STOPPABLE)
-	update_appearance(UPDATE_ICON)
+	update_icon()
 	return TRUE
 
 ///Recharges the drive, and sets another timer if not maxed out
@@ -147,7 +139,7 @@
 		charge_timer = addtimer(CALLBACK(src, PROC_REF(recharge)), BLINK_DRIVE_CHARGE_TIME, TIMER_STOPPABLE)
 	else
 		charge_timer = null
-	update_appearance(UPDATE_ICON)
+	update_icon()
 
 ///The effects applied on teleporting from or to a location
 /obj/item/blink_drive/proc/teleport_debuff_aoe(atom/movable/teleporter)

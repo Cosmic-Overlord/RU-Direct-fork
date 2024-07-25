@@ -125,15 +125,10 @@
 
 /obj/item/binoculars/tactical/update_overlays()
 	. = ..()
-	switch(mode)
-		if(MODE_CAS)
-			. += "binoculars_cas"
-		if(MODE_RANGE_FINDER)
-			. += "binoculars_range"
-		if(MODE_RAILGUN)
-			. += "binoculars_railgun"
-		if(MODE_ORBITAL)
-			. += "binoculars_orbital"
+	if(mode)
+		. += "binoculars_range"
+	else
+		. += "binoculars_laser"
 
 /// Proc that when called checks if the selected mortar isnt out of list bounds and if it is, resets to 1
 /obj/item/binoculars/tactical/proc/check_mortar_index()

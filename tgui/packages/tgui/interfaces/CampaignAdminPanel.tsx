@@ -156,15 +156,15 @@ export const CampaignAdminPanel = (props) => {
               <Stack.Item mt={2}>
                 <Button
                   tooltip={multiline`
-                    Triggers autobalance to run.
-                    This can be forced, to not give players a choice.
+                    Forces autobalance to run.
+                    Players on the high pop team will be FORCED to swap.
                   `}
                   mt={1}
                   onClick={() => {
-                    act('autobalance');
+                    act('force_autobalance');
                   }}
                 >
-                  Trigger Autobalance
+                  Force Autobalance
                 </Button>
               </Stack.Item>
               <Stack.Item mt={2}>

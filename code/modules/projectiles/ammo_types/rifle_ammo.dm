@@ -116,9 +116,10 @@
 	damage_falloff = 0.5
 	ammo_behavior_flags = AMMO_BALLISTIC
 	accurate_range = 25
+	accurate_range_min = 6
 	max_range = 40
 	damage = 65
-	penetration = 17.5
+	penetration = 15
 	sundering = 2
 
 /datum/ammo/bullet/rifle/garand

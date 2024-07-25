@@ -330,9 +330,8 @@
 /obj/machinery/button/valhalla/vehicle_button/proc/spawn_vehicles(mob/living/user)
 	var/list/spawnable_vehicles = list(
 		/obj/vehicle/sealed/armored/multitile,
-		/obj/vehicle/sealed/armored/multitile/apc,
 		/obj/vehicle/sealed/armored/multitile/som_tank,
-		/obj/vehicle/sealed/armored/multitile/campaign,
+		/obj/vehicle/sealed/armored/multitile/apc
 	)
 
 	var/selected_vehicle = tgui_input_list(user, "Which vehicle do you want to spawn?", "Vehicle spawn", spawnable_vehicles)
